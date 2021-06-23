@@ -1,6 +1,7 @@
 
 from setuptools import setup, find_packages
 import numpy
+import re
 
 # borrowed from orbitize: https://github.com/sblunt/orbitize
 def get_requires():
@@ -9,9 +10,15 @@ def get_requires():
         reqs.append(line)
     return reqs
 
+# auto-updating version code stolen from RadVel
+def get_property(prop, project):
+    result = re.search(r'{}\s*=\s*[\'"]([^\'"]*)[\'"]'.format(prop),
+                       open(project + '/__init__.py').read())
+    return result.group(1)
+
 setup(
     name='astro3words',
-    version='0.3',
+    version=get_property('__version__', 'astro3words'),
     description='astro3words - get a simple 3-word coordinate of your favorite object!',
     url='https://github.com/astro-nova/astro-3-words',
     author='',
