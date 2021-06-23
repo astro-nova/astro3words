@@ -1,6 +1,7 @@
 what3words
 astropy
 numpy
-sphinx>=1.4
+sphinx
 ipykernel
 nbsphinx
+pytest
