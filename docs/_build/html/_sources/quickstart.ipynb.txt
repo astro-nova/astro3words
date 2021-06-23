@@ -15,9 +15,11 @@
    ]
   },
   {
-   "cell_type": "raw",
-   "id": "e29d51cf",
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "83fa7de0",
    "metadata": {},
+   "outputs": [],
    "source": [
     "pip install astro3words"
    ]
