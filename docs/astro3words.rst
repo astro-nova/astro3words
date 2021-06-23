@@ -1,6 +1,6 @@
 .. _astro3words:
 
-Get 3 Words
+API Guide
 ============
 
 .. automodule:: astro3words

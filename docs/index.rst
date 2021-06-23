@@ -23,9 +23,9 @@ User Guide:
 
 .. toctree::
    :maxdepth: 1
-
+   
+   quickstart.ipynb
    astro3words
-   tutorials/quickstart.ipynb
 
 
 Contributing:
