@@ -1,6 +1,7 @@
 from astro3words import coords_to_words, words_to_coords
 import what3words
 import pytest
+import numpy as np
 
 def test_coords_to_words():
     """
@@ -31,5 +32,17 @@ def test_words_to_coords():
         for dec in dec_list:
             words = coords_to_words(ra, dec)
             ra_out, dec_out = words_to_coords(words)
-            assert ra_out == pytest.approx(ra, abs=precision)
-            assert dec_out == pytest.approx(dec, abs=precision)
+
+            # Calculate angular distance
+            ra_diff = ra - ra_out 
+            dec_diff = dec - dec_out
+            if ra_diff > 180: ra_diff -= 360 # Wrap around between 0 and 360
+
+            # Use small-angle approx of angular distance
+            dist2 = ((ra_diff * np.pi / 180)**2 * 
+                    np.cos(dec * np.pi/180)**2 +
+                    (dec_diff*np.pi/180)**2)
+            dist = np.sqrt(dist2)
+            assert dist < precision
+
+test_words_to_coords()

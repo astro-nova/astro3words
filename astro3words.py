@@ -2,6 +2,8 @@ import what3words
 
 # Connects to the what3words API using a public key (limited usage!!)
 geocoder = what3words.Geocoder("6WEY7C3R")
+
+
 def coords_to_words(ra:float, dec:float) -> str:
     """
     Given RA, Dec of the object, return its "What 3 words" coordinate string.
@@ -22,7 +24,7 @@ def coords_to_words(ra:float, dec:float) -> str:
         raise ValueError("RA must be between 0 and 360, and Dec between -90 and 90!")
     
     # Convert ra to longitude-style (-180 < lon <180)
-    if ra > 180: ra -= 360
+    if ra >= 180: ra -= 360
 
     # Search what3words API for the given latitude/longitude
     res = geocoder.convert_to_3wa(what3words.Coordinates(dec, ra))
@@ -39,10 +41,6 @@ def words_to_coords(words:str) -> tuple[float, float]:
     Returns:
         tuple(float, float): Right ascension and declination of the object 
     """
-
-    # TODO
-    # Need to check here that the three words are given in the format "word1.word2.word3"
-    # Need to catch exceptions as well
 
     # Check that the input is sensible
     try:
@@ -61,5 +59,5 @@ def words_to_coords(words:str) -> tuple[float, float]:
 
     # Otherwise, return ra/dec
     ra, dec = coords["lng"], coords["lat"]
-    if ra < 0: ra += 180
+    if ra < 0: ra += 360
     return ra, dec
