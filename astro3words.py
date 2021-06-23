@@ -28,7 +28,8 @@ def coords_to_words(ra:float, dec:float) -> str:
     res = geocoder.convert_to_3wa(what3words.Coordinates(dec, ra))
     return res['words']
 
-def words_to_coords(words:str) -> (float, float):
+
+def words_to_coords(words:str) -> tuple[float, float]:
     """
     Given three words, return the RA and dec coordinates of an object.
 
