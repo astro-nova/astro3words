@@ -8,8 +8,8 @@ def test_coords_to_words():
     with some edge coordinate cases.
     """
 
-    ra_list = [-1.5, 0, 10, 180, 180.5, 361, np.inf]
-    dec_list = [-92.1, -90, -85.3, 0, 85.3, 90.0, 91, -np.inf]
+    ra_list = [0, 1.1, 90, 180, 360, 195.5]
+    dec_list = [-90, -89.9, 0, 89.9, 90]
 
     for ra in ra_list:
         for dec in dec_list:
