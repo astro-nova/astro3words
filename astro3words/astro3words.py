@@ -1,4 +1,5 @@
 import what3words
+from typing import Tuple
 
 # Connects to the what3words API using a public key (limited usage!!)
 geocoder = what3words.Geocoder("6WEY7C3R")
@@ -31,7 +32,7 @@ def coords_to_words(ra:float, dec:float) -> str:
     return res['words']
 
 
-def words_to_coords(words:str) -> tuple[float, float]:
+def words_to_coords(words:str) -> Tuple[float, float]:
     """
     Given three words, return the RA and dec coordinates of an object.
 
