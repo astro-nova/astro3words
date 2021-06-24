@@ -32,13 +32,14 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Get 3 Words" href="astro3words.html" /> 
+    <link rel="next" title="Quick start guide" href="quickstart.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,7 +85,8 @@
             
             
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="astro3words.html">Get 3 Words</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="astro3words.html">API Guide</a></li>
 </ul>
 
             
@@ -152,7 +154,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="astro3words-easy-coordinates-in-astronomy">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="astro3words-easy-coordinates-in-astronomy">
 <h1>Astro3Words: easy coordinates in astronomy<a class="headerlink" href="#astro3words-easy-coordinates-in-astronomy" title="Permalink to this headline">¶</a></h1>
 <p>Hi! Welcome to the documentation of Astro3Words – a Python package to find
 <a class="reference external" href="https://what3words.com/pretty.needed.chill">what3words</a> coordinates of astronomical sources.</p>
@@ -167,7 +193,8 @@ please <a class="reference external" href="https://github.com/astro-nova/astro-3
 <h2>User Guide:<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="astro3words.html">Get 3 Words</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick start guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="astro3words.html">API Guide</a></li>
 </ul>
 </div>
 </div>
@@ -185,7 +212,7 @@ to Liza Sazonova (<a class="reference external" href="mailto:esazono1&#37;&#52;&
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="astro3words.html" class="btn btn-neutral float-right" title="Get 3 Words" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="quickstart.html" class="btn btn-neutral float-right" title="Quick start guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
