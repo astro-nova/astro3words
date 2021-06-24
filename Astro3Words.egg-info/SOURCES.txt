@@ -1,0 +1,8 @@
+README.md
+setup.py
+Astro3Words.egg-info/PKG-INFO
+Astro3Words.egg-info/SOURCES.txt
+Astro3Words.egg-info/dependency_links.txt
+Astro3Words.egg-info/top_level.txt
+tests/__init__.py
+tests/test_astro3words.py
