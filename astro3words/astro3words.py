@@ -1,17 +1,24 @@
+from numpy import deg2rad
 import what3words
 from typing import Tuple
+from astropy.coordinates import SkyCoord
+from astropy import units as u
 
 # Connects to the what3words API using a public key (limited usage!!)
 geocoder = what3words.Geocoder("6WEY7C3R")
 
 
-def coords_to_words(ra:float, dec:float) -> str:
+def coords_to_words(*args, **kwargs) -> str:
     """
     Given RA, Dec of the object, return its "What 3 words" coordinate string.
 
     Args:
-        ra (float): Right Ascension of the object [degrees]
-        dec (float): Declination of the object [degrees]
+        ra (float or str): Right Ascension of the object [degrees or hms] AND
+        dec (float or str): Declination of the object [degrees or dms], OR
+        l (float): Galactic latitute [degrees] AND
+        b (float): Galactic longitude [degrees], OR
+        coord_string (str): 'XXhXXmXXs +XXdXXmXXs" string acceptable by AstroPy SkyCoord function. 
+        format (str): coordinate format
 
     Returns:
         str: 3-word string delimited by periods corresponding to this coordinate.
@@ -19,6 +26,16 @@ def coords_to_words(ra:float, dec:float) -> str:
     # TODO
     # 1. Accept different types of coordinate inputs: hms:dms string, different coord systems,
     # or Astropy SkyCoord objects
+
+    if ( (len(args) > 0 and isinstance(args[0], float)) or
+       ("ra" in kwargs and isinstance(kwargs['ra'], float)) or
+       ("l" in kwargs and isinstance(kwargs['l'], float))):
+        c = SkyCoord(*args, **kwargs, unit=u.deg)
+        print(c)
+    else:
+        c = SkyCoord(*args, **kwargs)
+    c = c.transform_to('icrs')
+    ra, dec = c.ra.deg, c.dec.deg
 
     # Check that the input is sensible
     if (ra < 0) or (ra > 360) or (dec < -90) or (dec > 90):
