@@ -1,0 +1,14 @@
+.. _quickstart:
+
+Getting Started
+===============
+
+Installation
+++++++++++++
+
+Install ``astro3words`` using pip:
+
+.. code-block:: bash
+
+    $ pip install radvel
+
