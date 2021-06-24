@@ -1,4 +1,3 @@
-from numpy import deg2rad
 import what3words
 from typing import Tuple
 from astropy.coordinates import SkyCoord
@@ -18,7 +17,7 @@ def coords_to_words(*args, **kwargs) -> str:
         l (float): Galactic latitute [degrees] AND
         b (float): Galactic longitude [degrees], OR
         coord_string (str): 'XXhXXmXXs +XXdXXmXXs" string acceptable by AstroPy SkyCoord function. 
-        format (str): coordinate format
+        frame (str): coordinate format
 
     Returns:
         str: 3-word string delimited by periods corresponding to this coordinate.
