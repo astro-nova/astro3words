@@ -13,3 +13,5 @@ Written by Liza Sazonova, Nnaji Jude. Contributions are welcome, please contact 
 
 * Add a web-app for easy conversion without needing a python install
 * Accept a wider range of coordinates
+
+[![GitHub license](https://img.shields.io/github/license/astro-nova/astro-3-words)](https://github.com/astro-nova/astro-3-words/blob/main/LICENSE)
