@@ -1,9 +1,11 @@
-# Astro3Words
+# astro.three.words
 
 Python package to get easily-readable 3-word addresses of astronomical objects 
 with 0.1" precision. Feel free to use in any talks, posters, or outreach!
 
 Installation instructions and a quick-start guide are [here](https://astro-3-words.readthedocs.io/en/latest/#).
+
+You can also test out our [webapp](http://3.16.68.192:8080/)!
 
 ## Attribution & contribution
 
